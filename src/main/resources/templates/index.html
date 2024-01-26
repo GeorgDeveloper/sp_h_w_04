@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Пользователи</title>
 </head>
 <body>
+<h1>Создать пользователей</h1>
+<form action="/registration" method="post">
+    <input type="text" name="name"><br>
+    <input type="text" name="age"><br>
+    <input type="text" name="email"><br>
+    <input type="submit" value="Создать"><br>
+</form>
+
+<h2>Список пользователей</h2>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>EMAIL</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+    </tr>
+</table>
+<br>
+<form action="/sort" method="post">
+    <input type="submit" value="Сортировка"><br>
+</form>
+<br>
+<form action="/filter" method="post">
+    <input type="text" name="age"><br>
+    <input type="submit" value="Фильтровать"><br>
+</form>
+<br>
+
+<p th:text="${calcAge}"></p>
+<form action="/average" method="get">
+    <input type="submit" value="Посчитать"><br>
+</form>
 
 </body>
 </html>

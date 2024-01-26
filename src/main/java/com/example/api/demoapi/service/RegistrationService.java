@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-
 public class RegistrationService {
 
     private List<User> userList = new ArrayList<>();;
